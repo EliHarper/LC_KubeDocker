@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert
+    kompose.service.type: nodeport
+    kompose.version: 1.7.0 (HEAD)
+  creationTimestamp: null
+  name: web
+  labels:
+    k8s-app: web
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      service: web
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        service: web
+    spec:
+      containers:
+      - image: lights_ui:latest
+        name: web
+        ports:
+        - containerPort: 8085
+        resources: {}
+      restartPolicy: Always
+status: {}

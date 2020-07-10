@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: StatefulSet 
+metadata:
+  name: mongodb-standalone
+spec:
+  serviceName: db
+  replicas: 1
+  selector:
+    matchLabels:
+      app: db
+  template:
+    metadata:
+      labels:
+        app: db
+        selector: mongodb-standalone
+    spec:
+      containers:
+      - name: mongodb-standalone
+        image: mongo:latest
+        ports:
+        - containerPort: 27017
+          name: db
+        env:
+          - name: mongodb-standalone
+      nodeSelector:
+        kubernetes.io/hostname: k8s-node1

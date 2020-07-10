@@ -1,0 +1,8 @@
+apiVersion: mongodb.com/v1
+kind: MongoDB
+metadata:
+  name: db
+spec:
+  version: 4.2.2-ent
+type: Standalone
+persistent: true

@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: mongo
+spec:
+  serviceName: "mongo-service"
+  selector:
+    matchLabels:
+      app: mongo 
+  template:
+    metadata:
+      labels:
+        app: mongo
+    spec:
+      containers:
+      - name: mongo
+        image: mongo:3.6
+        ports:
+        - containerPort: 27017
+          name: mongo
+        volumeMounts:
+        - name: data-db
+          mountPath: /data/db
+  volumeClaimTemplates:
+    - metadata:
+        name: data-db
+      spec:
+        accessModes:
+          - ReadWriteOnce
+        storageClassName: 'local'
+        resources:
+          requests:
+            storage: 500Mi
+
