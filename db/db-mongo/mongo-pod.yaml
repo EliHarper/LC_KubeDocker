@@ -3,17 +3,24 @@ kind: Pod
 metadata:
   name: mongo
 spec:
-  selector:
-    matchLabels:
-      app: mongo 
+  nodeName: k8s-node2
   volumes:
-    - name: data-db
+    - name: mongo-data-db
       persistentVolumeClaim:
-        claimName: mongo-data-db
+        claimName: mongo-data-db-mongo-0
   containers:
     - name: mongo
       image: mongo:3.6
       volumeMounts:
-        - name: data-db
+        - name: mongo-data-db
           mountPath: /data/db
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+        - matchExpressions:
+          - key: number
+            operator: In
+            values:
+            - two
 

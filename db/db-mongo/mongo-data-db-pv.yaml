@@ -15,7 +15,9 @@ spec:
   nodeAffinity:
     required:
       nodeSelectorTerms:
-        - matchExpressions:
-          - key: node.kubernetes.io/mongodb
-            operator: In
-            values: ['data']
+      - matchExpressions:
+        - key: kubernetes.io/hostname
+          operator: In
+          values:
+          - k8s-node2
+

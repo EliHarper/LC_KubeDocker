@@ -19,11 +19,11 @@ spec:
         - containerPort: 27017
           name: mongo
         volumeMounts:
-        - name: data-db
-          mountPath: /data/db
+        - name: mongo-data-db
+          mountPath: /tmp/data/db
   volumeClaimTemplates:
     - metadata:
-        name: data-db
+        name: mongo-data-db
       spec:
         accessModes:
           - ReadWriteOnce
