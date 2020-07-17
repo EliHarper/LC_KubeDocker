@@ -13,7 +13,7 @@ spec:
         app: api
     spec:
       containers:
-      - image: eliharper/lights_api:7.9.3
+      - image: eliharper/lights_api:7.17.2
         name: api
         ports:
         - containerPort: 5001
