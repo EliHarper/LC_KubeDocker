@@ -12,8 +12,18 @@ spec:
       labels:
         app: api
     spec:
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: number
+                operator: In
+                values:
+                - one
+
       containers:
-      - image: eliharper/lights_api:7.17.2
+      - image: eliharper/lights_api:7.28.3
         name: api
         ports:
         - containerPort: 5001
