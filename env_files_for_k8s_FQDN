@@ -1,0 +1,6 @@
+# UI .env file:
+VUE_APP_API_URL=http://10.162.134.51:32241
+
+# API .env file:
+KAFKA_URL=192.168.1.13:9092
+DB_URL=mongo-service.default.svc.cluster.local
