@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: webapp-ingress
+spec:
+  rules:
+  - host: my.kubernetes.example
+    http:
+      paths:
+      - path: /
+        backend:
+            serviceName: api-service
+            servicePort: 5001
+      - backend:
+            serviceName: api-service
+            servicePort: 5001

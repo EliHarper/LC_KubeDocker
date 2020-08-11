@@ -4,4 +4,5 @@ metadata:
   namespace: kube-system
   name: local
 provisioner: kubernetes.io/no-provisioner
+reclaimPolicy: Retain
 volumeBindingMode: WaitForFirstConsumer

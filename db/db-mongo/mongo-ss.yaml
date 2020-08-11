@@ -20,7 +20,7 @@ spec:
           name: mongo
         volumeMounts:
         - name: mongo-data-db
-          mountPath: /tmp/data/db
+          mountPath: /home/eli.harper/data/mongodb
   volumeClaimTemplates:
     - metadata:
         name: mongo-data-db

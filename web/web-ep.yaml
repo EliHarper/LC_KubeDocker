@@ -1,0 +1,31 @@
+apiVersion: v1
+kind: Endpoints
+metadata:
+  creationTimestamp: "2020-07-06T14:09:15Z"
+  name: web-service
+  namespace: default
+  resourceVersion: "10299330"
+  selfLink: /api/v1/namespaces/default/endpoints/web-service
+  uid: 696e0f9f-a88a-41e9-9b96-b4fb96980528
+subsets:
+- addresses:
+  - ip: 10.244.2.92
+    nodeName: k8s-node2
+    targetRef:
+      kind: Pod
+      name: web-deployment-76744b4c74-l2rls
+      namespace: default
+      resourceVersion: "10299282"
+      uid: 2e9b4127-dc75-4276-a83e-5ae0b26078ff
+  - ip: 10.244.2.93
+    nodeName: k8s-node2
+    targetRef:
+      kind: Pod
+      name: web-deployment-76744b4c74-brk6w
+      namespace: default
+      resourceVersion: "10299319"
+      uid: 802038cb-a6dc-4efc-91fe-ef2725c5ca4e
+  ports:
+  - name: "8080"
+    port: 8080
+    protocol: TCP

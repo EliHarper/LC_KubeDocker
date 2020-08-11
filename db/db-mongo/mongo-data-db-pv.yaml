@@ -11,7 +11,8 @@ spec:
   accessModes:
     - ReadWriteOnce
   local:
-    path: /tmp/data/db
+    path: /home/eli.harper/data/mongodb
+  persistentVolumeReclaimPolicy: Retain
   nodeAffinity:
     required:
       nodeSelectorTerms:
@@ -20,4 +21,3 @@ spec:
           operator: In
           values:
           - k8s-node2
-

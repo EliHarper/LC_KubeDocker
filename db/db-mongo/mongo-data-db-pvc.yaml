@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: mongo-data-db
+  name: mongo-data-db-mongo-0
 spec:
   storageClassName: local
   resources:

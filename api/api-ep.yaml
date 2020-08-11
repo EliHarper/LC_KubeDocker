@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Endpoints
+metadata:
+  annotations:
+    endpoints.kubernetes.io/last-change-trigger-time: "2020-07-30T11:16:29Z"
+  creationTimestamp: "2020-07-06T15:35:24Z"
+  name: api-service
+  namespace: default
+  resourceVersion: "9450071"
+  selfLink: /api/v1/namespaces/default/endpoints/api-service
+  uid: 7b96c84c-1d04-4a13-885c-a18e66de7601
+subsets:
+- addresses:
+  - ip: 10.244.1.97
+    nodeName: k8s-node1
+    targetRef:
+      kind: Pod
+      name: api-5666c49759-97k7p
+      namespace: default
+      resourceVersion: "9450069"
+      uid: 65628c30-7d9b-4f9e-84a7-1b8b6048b980
+  ports:
+  - name: "5001"
+    port: 5001
+    protocol: TCP

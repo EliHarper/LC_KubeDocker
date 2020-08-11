@@ -3,11 +3,6 @@ kind: Ingress
 metadata:
     name: api
 spec:
-    rules:
-        - host:
-            http:
-                paths:
-                    - path: /
-                      api: 
-                        serviceName: api-service
-                        servicePort: 5001
+  backend:
+    serviceName: api-service
+    servicePort: 5001
